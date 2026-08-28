@@ -3,3 +3,5 @@ IPL_Cleaned.csv
 .DS_Store
 __pycache__/
 *.pyc
+IPL.csv
+IPL_Cleaned.csv
