@@ -97,7 +97,7 @@ date_col = find_column([
 ])
 st.sidebar.title("🏏 IPL Analyzer")
 page = st.sidebar.radio(
-    "",
+    "Navigation",
     [
         "🏠 Overview",
         "Batting Analysis",
@@ -106,7 +106,7 @@ page = st.sidebar.radio(
         "Season Analysis",
         "IPL Records",
         "Final Score Prediction"
-    ]
+    ],label_visibility="collapsed"
 )
 st.sidebar.markdown("---")
 st.sidebar.info(
