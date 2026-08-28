@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import os
+import zipfile
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
@@ -13,6 +15,9 @@ st.set_page_config(
 @st.cache_data
 def load_data():
     try:
+        if not os.path.exists("IPL_Cleaned.csv") and os.path.exists("IPL_Datasets.zip"):
+          with zipfile.ZipFile("IPL_Datasets.zip", "r") as zip_ref:
+            zip_ref.extract("IPL_Cleaned.csv", ".")
         df = pd.read_csv("IPL_Cleaned.csv", low_memory=False)
     except FileNotFoundError:
         try:
